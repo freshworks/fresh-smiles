@@ -48,7 +48,7 @@ function theLoop($fd, $i, $max) {
 		}
 		
 	} else {
-		$result = "DANGER WILL ROBINSON, DANGER";
+		$result = "danger";
 	}
 	
 	return $result;
