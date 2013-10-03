@@ -28,8 +28,10 @@ while ( $i != 0 ) {
 	
 	if ( $json->errors->error ) {
 		if ( $i < 30000 ) {
+			echo "No Ticket: $i ...Continuing.\n";
 			$i++;
 		} else {
+			echo "No Ticket: $i ...STOP.\n";
 			$i = 0;
 		}
 	} else if ( empty($json) ) {
@@ -63,6 +65,8 @@ while ( $i != 0 ) {
 			
 			$query = "INSERT INTO zk_smiley(created_at, updated_at, survey_created_at, survey_updated_at, ticket_id, survey_rating) VALUES(NOW(), NOW(), '{$safe['survey_created_at']}', '{$safe['survey_updated_at']}', '{$i}', '{$safe['survey_rating']}') ON DUPLICATE KEY UPDATE updated_at=NOW(), survey_created_at='{$safe['survey_created_at']}', survey_updated_at='{$safe['survey_updated_at']}', survey_rating='{$safe['survey_rating']}'";
 			mysql_query($query);
+			
+			echo "Survey for Ticket: $i\n";
 			
 		}
 		
