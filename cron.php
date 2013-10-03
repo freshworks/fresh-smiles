@@ -47,7 +47,7 @@ while ( $i != 0 ) {
 	
 		echo "\n";
 		echo "*ERROR* API LIMIT REACHED\n";
-		echo "LAST KNOWN TICKET: $i\n"
+		echo "LAST KNOWN TICKET: $i\n";
 		
 	} else {
 		
