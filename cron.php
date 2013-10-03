@@ -27,6 +27,7 @@ while ( $i != 0 ) {
 	$json = $fd->getTicketSurvey($i);
 	
 	if ( isset($json->errors->error) ) {
+		//This is a really stupid hack job... 
 		if ( $i < 30000 ) {
 			echo "No Ticket: $i ...Continuing.\n";
 			$i++;
