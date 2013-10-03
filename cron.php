@@ -34,7 +34,7 @@ while ( $i != 0 ) {
 			echo "No Ticket: $i ...STOP.\n";
 			$i = 0;
 		}
-	} else if ( empty($json) ) {
+	} else if ( !isset($json[0]) ) {
 		
 		//Insert Basic Ticket Info so we can update later
 		$query = "INSERT INTO zk_smiley(created_at, updated_at, survey_created_at, survey_updated_at, ticket_id, survey_rating) VALUES(NOW(), NOW(), NULL, NULL, '{$i}', NULL) ON DUPLICATE KEY UPDATE updated_at=NOW()";
@@ -46,6 +46,8 @@ while ( $i != 0 ) {
 		
 	} else if ( is_array($json) ) {
 		foreach($json[0]->survey_result as $result) {
+		
+			$raw = array();
 		
 			if ( isset($result->updated_at) ) {
 				$raw['survey_updated_at'] = $result->updated_at;
@@ -65,6 +67,9 @@ while ( $i != 0 ) {
 			
 			$query = "INSERT INTO zk_smiley(created_at, updated_at, survey_created_at, survey_updated_at, ticket_id, survey_rating) VALUES(NOW(), NOW(), '{$safe['survey_created_at']}', '{$safe['survey_updated_at']}', '{$i}', '{$safe['survey_rating']}') ON DUPLICATE KEY UPDATE updated_at=NOW(), survey_created_at='{$safe['survey_created_at']}', survey_updated_at='{$safe['survey_updated_at']}', survey_rating='{$safe['survey_rating']}'";
 			mysql_query($query);
+			
+			unset($raw);
+			unset($safe);
 			
 			echo "Survey for Ticket: $i\n";
 			
