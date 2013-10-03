@@ -7,19 +7,30 @@
 function theLoop($fd, $i, $max) {
 
 	$json = $fd->getTicketSurvey($i);
+	
+	$response = $fd->getLastHttpResponseText();
+	
+	//Stupid FreshDesk doesn't give you status codes for this...
+	if ( $response == "You have exceeded the limit of requests per hour" ) {
+		$result = "api_limit";
+	}
 
-	if ( isset($json->errors->error) ) {
+	else if ( isset($json->errors->error) ) {
 		//This is a really stupid hack job... 
 		if ( $i < $max ) {
 			$result = "continue";
 		} else {
 			$result = "stop";
 		}
-	} else if ( !isset($json[0]) ) {
+	}
+	
+	else if ( !isset($json[0]) ) {
 		
 			$result = "INSERT INTO zk_smiley(created_at, updated_at, survey_created_at, survey_updated_at, ticket_id, survey_rating) VALUES(NOW(), NOW(), NULL, NULL, '{$i}', NULL) ON DUPLICATE KEY UPDATE updated_at=NOW()";
 		
-	} else if ( is_array($json) ) {
+	}
+	
+	else if ( is_array($json) ) {
 		foreach($json[0] as $survey_result) {
 		
 			$raw = array();
@@ -47,7 +58,9 @@ function theLoop($fd, $i, $max) {
 			
 		}
 		
-	} else {
+	}
+	
+	else {
 		$result = "danger";
 	}
 	

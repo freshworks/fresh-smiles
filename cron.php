@@ -43,6 +43,12 @@ while ( $i != 0 ) {
 	
 		echo "DANGER WILL ROBINSON, DANGER";
 		
+	} else if ( $result == "api_limit" ) {
+	
+		echo "\n";
+		echo "*ERROR* API LIMIT REACHED\n";
+		echo "LAST KNOWN TICKET: $i\n"
+		
 	} else {
 		
 		echo "Insert Ticket: $i\n";
