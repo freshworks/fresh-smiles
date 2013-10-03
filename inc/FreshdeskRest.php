@@ -141,7 +141,7 @@ class FreshdeskRest {
         }
 
 		$json = json_decode($json);
-        return $json;
+		return $json;
     }
 
 
@@ -174,7 +174,7 @@ class FreshdeskRest {
         }
 
 		$json = json_decode($json);
-        return $json;
+		return $json;
     }
     
 }
