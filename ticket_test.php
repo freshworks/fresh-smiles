@@ -13,9 +13,6 @@ require_once('inc/FreshdeskRest.php');
 //Require Smiley Library
 require_once('inc/lib.php');
 
-//YES Debugging in TEST
-define('DEBUG', TRUE);
-
 //Create New FreshDesk API Object
 $fd = new FreshdeskRest(FD_URL, FD_API_USER, FD_API_PASS);
 
