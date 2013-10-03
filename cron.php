@@ -37,6 +37,8 @@ while ( $i != 0 ) {
 	} else if ( $result == "stop" ) {
 	
 		echo "No Ticket: $i ...STOP.\n";
+		
+		//This causes us to Abort
 		$i = -1;
 		
 	} else if ( $result == "danger" ) {
@@ -48,6 +50,9 @@ while ( $i != 0 ) {
 		echo "\n";
 		echo "*ERROR* API LIMIT REACHED\n";
 		echo "LAST KNOWN TICKET: $i\n";
+		
+		//This Causes us to Abort
+		$i = -1;
 		
 	} else {
 		
