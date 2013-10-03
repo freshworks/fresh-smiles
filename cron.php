@@ -7,6 +7,9 @@
 //Require the main configuration
 require_once('inc/config.php');
 
+//Require Smiley Library
+require_once('inc/lib.php');
+
 mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
 @mysql_select_db(DB_NAME) or die("Unable to select database");
 
@@ -21,65 +24,33 @@ if ( $fd->getLastHttpStatus() != 200 ) {
 }
 
 //Set the Variables for the Loop
-$i = 1;
+$i = LOWER_LIMIT;
 
 while ( $i != 0 ) {
-	$json = $fd->getTicketSurvey($i);
 	
-	if ( isset($json->errors->error) ) {
-		//This is a really stupid hack job... 
-		if ( $i < 30000 ) {
-			echo "No Ticket: $i ...Continuing.\n";
-			$i++;
-		} else {
-			echo "No Ticket: $i ...STOP.\n";
-			$i = 0;
-		}
-	} else if ( !isset($json[0]) ) {
+	$result = theLoop($fd, $i, UPPER_LIMIT);
+	
+	if ( $result == "continue" ) {
 		
-		//Insert Basic Ticket Info so we can update later
-		$query = "INSERT INTO zk_smiley(created_at, updated_at, survey_created_at, survey_updated_at, ticket_id, survey_rating) VALUES(NOW(), NOW(), NULL, NULL, '{$i}', NULL) ON DUPLICATE KEY UPDATE updated_at=NOW()";
-		mysql_query($query);
-		echo "No Survey for Ticket: $i\n";
+		echo "No Ticket: $i ...Continuing.\n";
 		
-		//Increment Ticket #
-		$i++;
+	} else if ( $result == "stop" ) {
+	
+		echo "No Ticket: $i ...STOP.\n";
+		$i = -1;
 		
-	} else if ( is_array($json) ) {
-		foreach($json[0]->survey_result as $result) {
-		
-			$raw = array();
-		
-			if ( isset($result->updated_at) ) {
-				$raw['survey_updated_at'] = $result->updated_at;
-			}
-			
-			if ( isset($result->created_at) ) {
-				$raw['survey_created_at'] = $result->created_at;
-			}
-			
-			if ( isset($result->rating) ) {
-				$raw['survey_rating'] = $result->rating;
-			}
-			
-			foreach($raw as $key => $val){
-				$safe[$key] = mysql_real_escape_string($val);
-			}
-			
-			$query = "INSERT INTO zk_smiley(created_at, updated_at, survey_created_at, survey_updated_at, ticket_id, survey_rating) VALUES(NOW(), NOW(), '{$safe['survey_created_at']}', '{$safe['survey_updated_at']}', '{$i}', '{$safe['survey_rating']}') ON DUPLICATE KEY UPDATE updated_at=NOW(), survey_created_at='{$safe['survey_created_at']}', survey_updated_at='{$safe['survey_updated_at']}', survey_rating='{$safe['survey_rating']}'";
-			mysql_query($query);
-			
-			unset($raw);
-			unset($safe);
-			
-			echo "Survey for Ticket: $i\n";
-			
-		}
-		
-		//Increment Ticket #
-		$i++;
+	} else if ( $result == "danger" ) {
+	
+		echo "DANGER WILL ROBINSON, DANGER";
 		
 	} else {
-		echo "DANGER WILL ROBINSON, DANGER";
+		
+		echo "Put stuff in Database.\n";
+		mysql_query($result);
+		
 	}
+	
+	//Increment the counter
+	$i++;
+		
 }
