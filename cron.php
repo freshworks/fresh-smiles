@@ -45,7 +45,7 @@ while ( $i != 0 ) {
 		
 	} else {
 		
-		echo "Put stuff in Database.\n";
+		echo "Insert Ticket: $i\n";
 		mysql_query($result);
 		
 	}
