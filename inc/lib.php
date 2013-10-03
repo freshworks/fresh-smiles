@@ -17,7 +17,7 @@ function theLoop($fd, $i, $max) {
 		}
 	} else if ( !isset($json[0]) ) {
 		
-			$result = "no_survey";
+			$result = "INSERT INTO zk_smiley(created_at, updated_at, survey_created_at, survey_updated_at, ticket_id, survey_rating) VALUES(NOW(), NOW(), NULL, NULL, '{$i}', NULL) ON DUPLICATE KEY UPDATE updated_at=NOW()";
 		
 	} else if ( is_array($json) ) {
 		foreach($json[0] as $survey_result) {
