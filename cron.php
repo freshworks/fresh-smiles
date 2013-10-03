@@ -26,7 +26,7 @@ $i = 1;
 while ( $i != 0 ) {
 	$json = $fd->getTicketSurvey($i);
 	
-	if ( empty($json->errors->error) ) {
+	if ( isset($json->errors->error) ) {
 		if ( $i < 30000 ) {
 			echo "No Ticket: $i ...Continuing.\n";
 			$i++;
@@ -47,15 +47,15 @@ while ( $i != 0 ) {
 	} else if ( is_array($json) ) {
 		foreach($json[0]->survey_result as $result) {
 		
-			if ( empty($result->updated_at) ) {
+			if ( isset($result->updated_at) ) {
 				$raw['survey_updated_at'] = $result->updated_at;
 			}
 			
-			if ( empty($result->created_at) ) {
+			if ( isset($result->created_at) ) {
 				$raw['survey_created_at'] = $result->created_at;
 			}
 			
-			if ( empty($result->rating) ) {
+			if ( isset($result->rating) ) {
 				$raw['survey_rating'] = $result->rating;
 			}
 			
