@@ -25,3 +25,7 @@ define('FD_API_USER', 'FRESHDESK_API_KEY');
 
 /* Freshdesk User Password or Blank if using API Key */
 define('FD_API_PASS', '');
+
+// ** Application Constants ** //
+/* Maximum Limit */
+define('UPPER_LIMIT', 30000);
