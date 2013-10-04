@@ -13,6 +13,10 @@ require_once('inc/FreshdeskRest.php');
 //Require Smiley Library
 require_once('inc/lib.php');
 
+//Connect to MySQL
+mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
+@mysql_select_db(DB_NAME) or die("Unable to select database");
+
 //Create New FreshDesk API Object
 $fd = new FreshdeskRest(FD_URL, FD_API_USER, FD_API_PASS);
 
@@ -33,3 +37,12 @@ echo theLoop($fd, 32000, UPPER_LIMIT) . "\n";
 
 //This is a ticket that exists with a survey
 echo theLoop($fd, 23195, UPPER_LIMIT) . "\n";
+
+//Test the Lower Limit Ticket
+echo lowerLimitTicket() . "\n";
+
+//Test the Lower Limit Survey
+echo lowerLimitSurvey() . "\n";
+
+//Test the Upper Limit of Tickets
+echo upperLimit($fd) . "\n";
