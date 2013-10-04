@@ -68,6 +68,33 @@ function theLoop($fd, $i, $max) {
 	
 }
 
+//Returns the Lower Limit for new Cron based on last ticket
+function lowerLimitTicket() {
+	$query = "SELECT ticket_id FROM `zk_smiley` ORDER BY id DESC LIMIT 1";
+	$ticket = mysql_query($query);
+	if (!$ticket) {
+    	die('Invalid query: ' . mysql_error());
+	} else {
+		$ticket = mysql_fetch_object($ticket);
+		$ticket = $ticket->ticket_id;
+		return $ticket;
+	}
+}
+
+//Returns the Lower Limit for new Cron based on last ticket WITH survey
+function lowerLimitSurvey() {
+	$query = "SELECT ticket_id FROM `zk_smiley` WHERE NOT survey_rating = NULL ORDER BY id DESC LIMIT 1";
+	$ticket = mysql_query($query);
+	if (!$ticket) {
+    	die('Invalid query: ' . mysql_error());
+	} else {
+		$ticket = mysql_fetch_object($ticket);
+		$ticket = $ticket->ticket_id;
+		return $ticket;
+	}
+}
+
+//Returns the Upper Limit for Cron
 function upperLimit($fd) {
 	$tickets = $fd->getAllTickets();
 	$max = $tickets[0]->display_id;
