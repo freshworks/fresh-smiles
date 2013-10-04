@@ -87,6 +87,8 @@ function lowerLimitSurvey() {
 	$ticket = mysql_query($query);
 	if (!$ticket) {
     	die('Invalid query: ' . mysql_error());
+	} else if ( isset($ticket) ) {
+		return;
 	} else {
 		$ticket = mysql_fetch_object($ticket);
 		$ticket = $ticket->ticket_id;
