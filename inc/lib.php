@@ -68,3 +68,9 @@ function theLoop($fd, $i, $max) {
 	
 }
 
+function upperLimit($fd) {
+	$tickets = $fd->getAllTickets();
+	$max = $tickets[0]->display_id;
+	return $max;
+}
+
