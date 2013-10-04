@@ -20,6 +20,11 @@ if ( $fd->getLastHttpStatus() != 200 ) {
 	echo "Unable to connect to FreshDesk";
 }
 
+//Check for Rate Limiting
+if ( $fd->getLastHttpResponseText() == "You have exceeded the limit of requests per hour" ) {
+	echo "*ERROR* API LIMIT REACHED\n";
+}
+
 //This is a ticket that doesn't exist
 echo theLoop($fd, 40000, UPPER_LIMIT) . "\n";
 
@@ -27,4 +32,4 @@ echo theLoop($fd, 40000, UPPER_LIMIT) . "\n";
 echo theLoop($fd, 32000, UPPER_LIMIT) . "\n";
 
 //This is a ticket that exists with a survey
-echo theLoop($fd, 32882, UPPER_LIMIT) . "\n";
+echo theLoop($fd, 23195, UPPER_LIMIT) . "\n";
