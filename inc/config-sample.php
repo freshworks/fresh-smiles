@@ -29,6 +29,3 @@ define('FD_API_PASS', '');
 // ** Application Constants ** //
 /* Ticket Start Point */
 define('LOWER_LIMIT', 1);
-
-/* Maximum Limit */
-define('UPPER_LIMIT', 30000);
