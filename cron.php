@@ -10,6 +10,7 @@ require_once('inc/config.php');
 //Require Smiley Library
 require_once('inc/lib.php');
 
+//Connect to MySQL
 mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
 @mysql_select_db(DB_NAME) or die("Unable to select database");
 
@@ -19,13 +20,22 @@ require_once('inc/FreshdeskRest.php');
 //Create New FreshDesk API Object
 $fd = new FreshdeskRest(FD_URL, FD_API_USER, FD_API_PASS);
 
+//Make sure the FD Connection Works
 if ( $fd->getLastHttpStatus() != 200 ) {
 	echo "Unable to connect to FreshDesk";
 }
 
+//Determine the Lower Limit
+$lowerLimit = lowerLimitSurvey();
+if ( empty($lowerLimit) ) {
+	$lowerLimit = lowerLimitTicket();
+} else {
+	//DO NOTHING
+}
+
 //Set the Variables for the Loop
-$i = LOWER_LIMIT;
-$max = upperLimit();
+$i = $lowerLimit;
+$max = upperLimit($fd);
 
 while ( $i != 0 ) {
 	
