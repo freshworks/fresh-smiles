@@ -134,7 +134,7 @@ class FreshdeskRest {
      * @return bool FALSE if it doesn't exist, the id otherwise.
      */
     public function getAllTickets() {
-        $xml = $this->restCall("/helpdesk/tickets.json", "GET");
+        $json = $this->restCall("/helpdesk/tickets.json?filter_name=all_tickets", "GET");
 
         if( empty($json) ) {
             return FALSE;
