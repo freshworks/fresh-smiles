@@ -30,13 +30,13 @@ if ( $fd->getLastHttpResponseText() == "You have exceeded the limit of requests 
 }
 
 //This is a ticket that doesn't exist
-echo theLoop($fd, 40000, UPPER_LIMIT) . "\n";
+echo theLoop($fd, 40000, 10000) . "\n";
 
 //This is a ticket that exists with no Survey
-echo theLoop($fd, 32000, UPPER_LIMIT) . "\n";
+echo theLoop($fd, 32000, 10000) . "\n";
 
 //This is a ticket that exists with a survey
-echo theLoop($fd, 23195, UPPER_LIMIT) . "\n";
+echo theLoop($fd, 23195, 10000) . "\n";
 
 //Test the Lower Limit Ticket
 echo lowerLimitTicket() . "\n";
