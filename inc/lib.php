@@ -83,7 +83,7 @@ function lowerLimitTicket() {
 
 //Returns the Lower Limit for new Cron based on last ticket WITH survey
 function lowerLimitSurvey() {
-	$query = "SELECT ticket_id FROM `zk_smiley` WHERE NOT survey_rating = NULL ORDER BY id DESC LIMIT 1";
+	$query = "SELECT ticket_id FROM `zk_smiley` WHERE NOT survey_rating = NULL ORDER BY id DESC LIMIT 1"; //This needs logic to actually go 100 surveys back and return that ticket ID
 	$ticket = mysql_query($query);
 	if (!$ticket) {
     	die('Invalid query: ' . mysql_error());
