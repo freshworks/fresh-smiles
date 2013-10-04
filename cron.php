@@ -25,10 +25,11 @@ if ( $fd->getLastHttpStatus() != 200 ) {
 
 //Set the Variables for the Loop
 $i = LOWER_LIMIT;
+$max = upperLimit();
 
 while ( $i != 0 ) {
 	
-	$result = theLoop($fd, $i, UPPER_LIMIT);
+	$result = theLoop($fd, $i, $max);
 	
 	if ( $result == "continue" ) {
 		
