@@ -40,7 +40,7 @@ mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
 		<div class="large-6 columns">
       <h4>How we measure customer happiness</h4>
 
-      <p>After every interaction with our support team, a customer is asked to rate the experience by clicking one of three ratings: “It was great” (happy face), “It was OK” (flat-line face), or “It wasn’t good” (frown face). <a href="/assets/email.png">Here’s what the choices look like</a> on the ticket.</p>
+      <p>After every interaction with our support team, a customer is asked to rate the experience by clicking one of three ratings: “It was great” (happy face), “It was OK” (flat-line face), or “It wasn’t good” (frown face). <a href="/assets/img/survey.png">Here’s what the choices look like</a> on the ticket.</p>
 
       <h4>This is how we get better</h4>
       <p>We study these ratings to help us improve. Every customer interaction is an opportunity to get better. The ultimate goal is 100% happiness.</p>
