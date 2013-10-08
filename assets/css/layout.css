@@ -1,5 +1,7 @@
 /** Smiles for ZippyKid Developed by Sixteenbit */
-.site { max-width: 57.14286em; margin-top: 3.57143em; margin-left: auto; margin-right: auto; background: #f9f9f9; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1); border-radius: 5px; }
+.site { max-width: 57.14286em; margin-top: 0.57143em; margin-left: auto; margin-right: auto; background: #f9f9f9; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1); border-radius: 5px; }
+
+.logo { margin-top: 10px; }
 
 .site-header { text-align: center; }
 .site-header .site-title { padding: 0.71429em 0; }
@@ -14,16 +16,21 @@
 .meter .icon { font-size: 5.14286em; }
 .meter label { font-size: 1.57143em; }
 
-.center { text-align: center; }
+div.list-centered { text-align: center; }
+div.list-centered ul { margin-bottom: 0; }
+div.list-centered ul > li { float: none; display: inline-block; margin-left: 30px; }
+div.list-centered ul > li:first-child { margin-left: 0; }
+.gravatar { width: 75px; }
 
-.icon-3x { font-size: 3em; }
-.hundred { padding: 0 1px 0 1px; }
+.hundred { padding: 0 3px 0 0px; }
 
 /* Colors of Happiness */
 .icon-smile, .icon-meh, .icon-frown { text-shadow: 0 1px 1px rgba(153, 153, 153, 0.8); }
 
 .icon-smile { color: #5da423; }
 
-.icon-meh { color: yellow; }
+.icon-meh { color: #D6D600; }
 
 .icon-frown { color: #c60f13; }
+
+.site-footer { margin-bottom: 3.57143em; }

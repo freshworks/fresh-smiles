@@ -28,6 +28,12 @@ mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
 </head>
 <body>
 
+<div class="row logo">
+	<div class="large-12 columns">
+		<a title="The leader in WordPress Hosting" href="http://www.zippykid.com"><img src="assets/img/new-logo.png" /></a>
+	</div>
+</div>
+
 <div id="page" class="site">
 
 	<header id="masthead" class="site-header" role="banner">
@@ -59,25 +65,29 @@ mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
 	<hr />
 	
 	<div class="row">
-		<div class="large-12 columns">
-			<h2 class="center">The team that makes our customer happy</h2>
-			<p>
-			<?php foreach( $support_emails as $name => $email ) {
-				$hash = gravatarHash($email); ?>
-				<div class="large-3 columns">
-					<img src="http://www.gravatar.com/avatar/<?php echo $hash; ?>?s=75" />
-					<?php echo $name; ?>
+		<div class="large-12 large-centered columns">
+			<h2 class="text-center">The team that makes our customer happy</h2>
+			<div class="row">
+				<div class="list-centered">
+					<ul>
+					<?php foreach( $support_emails as $name => $email ) {
+					$hash = gravatarHash($email); ?>
+						<li class="large-block-grid-4">
+							<img src="http://www.gravatar.com/avatar/<?php echo $hash; ?>?s=75" />
+							<p class="text-center gravatar"><?php echo $name; ?></p>
+						</li>
+					<?php } ?>
+					</ul>
 				</div>
-			<?php } ?>
-			</p>
+			</div>
 		</div>
 	</div>
 	
 	<hr />
 	
 	<div class="row">
-		<div class="large-12 columns">
-			<h2 class="center">The last 100 customer support ratings.</h2>
+		<div class="large-12 large-centered columns">
+			<h2 class="text-center">The last 100 customer support ratings.</h2>
 			<?php hundredSmiles(); ?>
 		</div>
 	</div>
@@ -85,17 +95,23 @@ mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
 	<hr />
 	
 	<div class="row">
-		<div class="large-12 columns">
-			<h2 class="center">We strive for happiness — not satisfaction.</h2>
+		<div class="large-12 large-centered columns">
+			<h2 class="text-center">We strive for happiness — not satisfaction.</h2>
 			<p>The customer service industry is obsessed with “customer satisfaction”. We believe that’s too low a bar. Satisfaction is not a measure of success — it’s just enough to get by. We want our customers to be happy. Happiness is success. Happiness is our goal.</p>
 		</div>
 	</div>
-
+	
 	<footer id="colophon" class="site-footer" role="contentinfo">
-
+	
 	</footer><!-- #colophon -->
 
 </div><!-- #page -->
+
+<div class="row">
+	<div class="large-12 large-centered columns">
+		<h2 class="text-center">The last 100 customer support ratings.</h2>
+	</div>
+</div>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="assets/js/holder.min.js"></script>
