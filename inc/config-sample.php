@@ -25,3 +25,8 @@ define('FD_API_USER', 'FRESHDESK_API_KEY');
 
 /* Freshdesk User Password or Blank if using API Key */
 define('FD_API_PASS', '');
+
+
+// ** Custom Ticket Views **//
+/* Closed Ticket View */
+define('CLOSED_VIEW', 'ID_OF_CLOSED_VIEW');
