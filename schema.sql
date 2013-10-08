@@ -7,5 +7,6 @@ CREATE TABLE `zk_smiley` (
   `ticket_id` int(11) DEFAULT NULL,
   `survey_rating` int(1) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `ticket_id` (`ticket_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  UNIQUE KEY `ticket_id` (`ticket_id`),
+  KEY `survey_updated_at` (`survey_updated_at`)
+) ENGINE=InnoDB AUTO_INCREMENT=31159 DEFAULT CHARSET=latin1;
