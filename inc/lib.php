@@ -4,6 +4,25 @@
  * Project: zk-smiley
  **/
  
+ 
+//This is used to return 300 closed ticket IDs for Checking Survey Data
+function theTickets($fd, $viewId) {
+
+	$tickets = array();
+
+	for( $i = 1; $i <= 10; $i++ ) {
+		$json = $fd->getTicketView($viewId, $i);
+		
+		foreach( $json as $ticket ){
+			array_push( $tickets, $ticket->display_id );
+		}
+	}
+	
+	return $tickets;
+		
+}
+
+//The main loop used to get survey data 
 function theLoop($fd, $i, $max) {
 
 	$json = $fd->getTicketSurvey($i);
@@ -98,7 +117,7 @@ function lowerLimitSurvey() {
 
 //Returns the Upper Limit for Cron
 function upperLimit($fd) {
-	$tickets = $fd->getAllTickets();
+	$tickets = $fd->getAllTickets(1);
 	$max = $tickets[0]->display_id;
 	return $max;
 }
@@ -148,10 +167,10 @@ function smileyRatings() {
 			}
 			else if ( $rating->survey_rating == '2' ) {
 				echo '<ul class="small-block-grid-2">';
-				echo '<li><i class="icon-2x icon-meh meh"></i> ' . $rating->count . ' said just OK</li>';
+				echo '<li class="rating-text"><i class="icon-2x icon-meh meh"></i> ' . $rating->count . ' said just OK</li>';
 			}
 			else if ( $rating->survey_rating == '3' ) {
-				echo '<li><i class="icon-2x icon-frown unhappy"></i> ' . $rating->count . ' said not so good</li>';
+				echo '<li class="rating-text"><i class="icon-2x icon-frown unhappy"></i> ' . $rating->count . ' said not so good</li>';
 				echo '</ul>';
 			}
 			else {
