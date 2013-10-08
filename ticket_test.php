@@ -34,19 +34,10 @@ $tickets = theTickets($fd, CLOSED_VIEW);
 print_r($tickets);
 
 //This is a ticket that doesn't exist
-echo theLoop($fd, 40000, 10000) . "\n";
+echo theLoop($fd, 40000) . "\n";
 
 //This is a ticket that exists with no Survey
-echo theLoop($fd, 32000, 10000) . "\n";
+echo theLoop($fd, 32000) . "\n";
 
 //This is a ticket that exists with a survey
-echo theLoop($fd, 23195, 10000) . "\n";
-
-//Test the Lower Limit Ticket
-echo lowerLimitTicket() . "\n";
-
-//Test the Lower Limit Survey
-echo lowerLimitSurvey() . "\n";
-
-//Test the Upper Limit of Tickets
-echo upperLimit($fd, 1) . "\n";
+echo theLoop($fd, 23195) . "\n";
