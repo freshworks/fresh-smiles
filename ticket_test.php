@@ -29,6 +29,10 @@ if ( $fd->getLastHttpResponseText() == "You have exceeded the limit of requests 
 	echo "*ERROR* API LIMIT REACHED\n";
 }
 
+//Returns 300 tickets from Closed View
+$tickets = theTickets($fd, CLOSED_VIEW);
+print_r($tickets);
+
 //This is a ticket that doesn't exist
 echo theLoop($fd, 40000, 10000) . "\n";
 
@@ -45,4 +49,4 @@ echo lowerLimitTicket() . "\n";
 echo lowerLimitSurvey() . "\n";
 
 //Test the Upper Limit of Tickets
-echo upperLimit($fd) . "\n";
+echo upperLimit($fd, 1) . "\n";
