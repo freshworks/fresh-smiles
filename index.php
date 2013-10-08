@@ -1,3 +1,15 @@
+<?php
+// ** Get the Smiley Front End Configuration Information ** //
+require_once(__DIR__ . '/inc/config.php');
+require_once(__DIR__ . '/inc/smiley-config.php');
+require_once(__DIR__ . '/inc/lib.php');
+
+//Connect to MySQL
+mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
+@mysql_select_db(DB_NAME) or die("Unable to select database");
+
+?>
+
 <!DOCTYPE html>
 <!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en-US" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en-US" > <!--<![endif]-->
@@ -39,17 +51,43 @@
 		<div class="large-6 columns">
 			<div class="card panel">
 				<h4 class="card-title">Last 100 customer ratings</h4>
-				<div class="overall">
-					<i class="overall-score icon-smile happy"></i> <label class="label happy-score">96% said great!</label>
-				</div>
-				<ul class="small-block-grid-2">
-					<li><i class="icon-2x icon-meh meh"></i> 1 said just OK</li>
-					<li><i class="icon-2x icon-frown unhappy"></i> 3 said not so good</li>
-				</ul>
-				<div class="response">
-					<p>Average wait time for an answer is<br> <span>1 minutes</span> during business hours.</p>
-				</div>
+				<?php smileyRatings(); ?>
 			</div>
+		</div>
+	</div>
+	
+	<hr />
+	
+	<div class="row">
+		<div class="large-12 columns">
+			<h2 class="center">The team that makes our customer happy</h2>
+			<p>
+			<?php foreach( $support_emails as $name => $email ) {
+				$hash = gravatarHash($email); ?>
+				<div class="large-3 columns">
+					<img src="http://www.gravatar.com/avatar/<?php echo $hash; ?>?s=75" />
+					<?php echo $name; ?>
+				</div>
+			<?php } ?>
+			</p>
+		</div>
+	</div>
+	
+	<hr />
+	
+	<div class="row">
+		<div class="large-12 columns">
+			<h2 class="center">The last 100 customer support ratings.</h2>
+			<?php hundredSmiles(); ?>
+		</div>
+	</div>
+	
+	<hr />
+	
+	<div class="row">
+		<div class="large-12 columns">
+			<h2 class="center">We strive for happiness — not satisfaction.</h2>
+			<p>The customer service industry is obsessed with “customer satisfaction”. We believe that’s too low a bar. Satisfaction is not a measure of success — it’s just enough to get by. We want our customers to be happy. Happiness is success. Happiness is our goal.</p>
 		</div>
 	</div>
 

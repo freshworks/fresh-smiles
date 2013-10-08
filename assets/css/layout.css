@@ -14,6 +14,11 @@
 .meter .icon { font-size: 5.14286em; }
 .meter label { font-size: 1.57143em; }
 
+.center { text-align: center; }
+
+.icon-3x { font-size: 3em; }
+.hundred { padding: 0 1px 0 1px; }
+
 /* Colors of Happiness */
 .icon-smile, .icon-meh, .icon-frown { text-shadow: 0 1px 1px rgba(153, 153, 153, 0.8); }
 
