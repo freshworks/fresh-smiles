@@ -25,32 +25,18 @@ if ( $fd->getLastHttpStatus() != 200 ) {
 	echo "Unable to connect to FreshDesk";
 }
 
-//Determine the Lower Limit
-$lowerLimit = lowerLimitSurvey();
-if ( empty($lowerLimit) ) {
-	$lowerLimit = lowerLimitTicket();
-} else {
-	//DO NOTHING
-}
+//Get Closed Tickets for Survey Checks
+$tickets = theTickets($fd, CLOSED_VIEW);
 
-//Set the Variables for the Loop
-$i = $lowerLimit;
-$max = upperLimit($fd);
-
-while ( $i != 0 ) {
+foreach( $tickets as $i ) {
 	
-	$result = theLoop($fd, $i, $max);
+	$result = theLoop($fd, $i);
 	
-	if ( $result == "continue" ) {
-		
-		echo "No Ticket: $i ...Continuing.\n";
-		
-	} else if ( $result == "stop" ) {
+	if ( $result == "stop" ) {
 	
 		echo "No Ticket: $i ...STOP.\n";
 		
-		//This causes us to Abort
-		$i = -1;
+		break;
 		
 	} else if ( $result == "danger" ) {
 	
@@ -62,8 +48,7 @@ while ( $i != 0 ) {
 		echo "*ERROR* API LIMIT REACHED\n";
 		echo "LAST KNOWN TICKET: $i\n";
 		
-		//This Causes us to Abort
-		$i = -1;
+		break;
 		
 	} else {
 		
@@ -71,8 +56,5 @@ while ( $i != 0 ) {
 		mysql_query($result);
 		
 	}
-	
-	//Increment the counter
-	$i++;
 		
 }

@@ -11,7 +11,7 @@ function theTickets($fd, $viewId) {
 	$tickets = array();
 
 	//$i can be increased to check more tickets
-	for( $i = 1; $i <= 10; $i++ ) {
+	for( $i = 1; $i <= 15; $i++ ) {
 		$json = $fd->getTicketView($viewId, $i);
 		
 		foreach( $json as $ticket ){
@@ -20,70 +20,66 @@ function theTickets($fd, $viewId) {
 	}
 	
 	return $tickets;
-		
+
 }
 
 //The main loop used to get survey data 
-function theLoop($fd, $tickets) {
+function theLoop($fd, $i) {
 
-	foreach( $tickets as $i ) {
+	$json = $fd->getTicketSurvey($i);
+	
+	$response = $fd->getLastHttpResponseText();
+	
+	//Stupid FreshDesk doesn't give you status codes for this...
+	if ( $response == "You have exceeded the limit of requests per hour" ) {
+		$result = "api_limit";
+	}
 
-		$json = $fd->getTicketSurvey($i);
+	else if ( isset($json->errors->error) ) { 
+		$result = "stop";
+	}
 	
-		$response = $fd->getLastHttpResponseText();
-	
-		//Stupid FreshDesk doesn't give you status codes for this...
-		if ( $response == "You have exceeded the limit of requests per hour" ) {
-			$result = "api_limit";
-		}
-
-		else if ( isset($json->errors->error) ) { 
-			$result = "stop";
-		}
-	
-		else if ( !isset($json[0]) ) {
+	else if ( !isset($json[0]) ) {
 		
 		$result = "INSERT INTO zk_smiley(created_at, updated_at, survey_created_at, survey_updated_at, ticket_id, survey_rating) VALUES(NOW(), NOW(), NULL, NULL, '{$i}', NULL) ON DUPLICATE KEY UPDATE updated_at=NOW()";
 		
-		}
-	
-		else if ( is_array($json) ) {
-			foreach($json[0] as $survey_result) {
-		
-				$raw = array();
-		
-				if ( isset($survey_result->updated_at) ) {
-					$raw['survey_updated_at'] = $survey_result->updated_at;
-				}
-			
-				if ( isset($survey_result->created_at) ) {
-					$raw['survey_created_at'] = $survey_result->created_at;
-				}
-			
-				if ( isset($survey_result->rating) ) {
-					$raw['survey_rating'] = $survey_result->rating;
-				}
-			
-				foreach($raw as $key => $val){
-					$safe[$key] = mysql_real_escape_string($val);
-				}
-			
-				$result = "INSERT INTO zk_smiley(created_at, updated_at, survey_created_at, survey_updated_at, ticket_id, survey_rating) VALUES(NOW(), NOW(), '{$safe['survey_created_at']}', '{$safe['survey_updated_at']}', '{$i}', '{$safe['survey_rating']}') ON DUPLICATE KEY UPDATE updated_at=NOW(), survey_created_at='{$safe['survey_created_at']}', survey_updated_at='{$safe['survey_updated_at']}', survey_rating='{$safe['survey_rating']}'";
-						
-				unset($raw);
-				unset($safe);
-			
-			}
-		}
-	
-		else {
-			$result = "danger";
-			}
-	
-		return $result;
-	
 	}
 	
+	else if ( is_array($json) ) {
+		foreach($json[0] as $survey_result) {
+		
+			$raw = array();
+		
+			if ( isset($survey_result->updated_at) ) {
+				$raw['survey_updated_at'] = $survey_result->updated_at;
+			}
+			
+			if ( isset($survey_result->created_at) ) {
+				$raw['survey_created_at'] = $survey_result->created_at;
+			}
+			
+			if ( isset($survey_result->rating) ) {
+				$raw['survey_rating'] = $survey_result->rating;
+			}
+			
+			foreach($raw as $key => $val){
+				$safe[$key] = mysql_real_escape_string($val);
+			}
+			
+			$result = "INSERT INTO zk_smiley(created_at, updated_at, survey_created_at, survey_updated_at, ticket_id, survey_rating) VALUES(NOW(), NOW(), '{$safe['survey_created_at']}', '{$safe['survey_updated_at']}', '{$i}', '{$safe['survey_rating']}') ON DUPLICATE KEY UPDATE updated_at=NOW(), survey_created_at='{$safe['survey_created_at']}', survey_updated_at='{$safe['survey_updated_at']}', survey_rating='{$safe['survey_rating']}'";
+						
+			unset($raw);
+			unset($safe);
+			
+		}
+	}
+	
+	else {
+		$result = "danger";
+	}
+		
+	return $result;
+
 }
 
 //Gravatars for Support
