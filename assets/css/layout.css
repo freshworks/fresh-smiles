@@ -12,15 +12,18 @@
 .card .happy-score { background-color: #5da423; text-shadow: 0 2px 0 #360; margin: 20px 0 5px 8px; border-radius: 3px; padding: 5px 10px; font-size: 2em; color: #FFF; float: right; font-weight: bold; }
 .card .overall-score { font-size: 5.71429em; }
 
+li.rating-text { font-size: 15px; padding-bottom: 0; }
+
 .meter { text-align: center; }
 .meter .icon { font-size: 5.14286em; }
 .meter label { font-size: 1.57143em; }
 
 div.list-centered { text-align: center; }
 div.list-centered ul { margin-bottom: 0; }
-div.list-centered ul > li { float: none; display: inline-block; margin-left: 30px; }
+div.list-centered ul > li { float: none; display: inline-block; margin-left: 30px; margin-bottom: 0; }
 div.list-centered ul > li:first-child { margin-left: 0; }
-.gravatar { width: 75px; }
+.gravatar { border-radius: 5px; }
+.support-name { width: 75px; }
 
 .hundred { padding: 0 3px 0 0px; }
 

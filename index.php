@@ -44,37 +44,38 @@ mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
 
 	<div class="row">
 		<div class="large-6 columns">
-      <h4>How we measure customer happiness</h4>
+			<h4>How we measure customer happiness</h4>
+			<p>After every interaction with our support team, a customer is asked to rate the experience by clicking one of three ratings: “It was great” (happy face), “It was OK” (flat-line face), or “It wasn’t good” (frown face). <a href="/assets/img/survey.png">Here’s what the choices look like</a> on the ticket.</p>
+			
+			<h4>This is how we get better</h4>
+			<p>We study these ratings to help us improve. Every customer interaction is an opportunity to get better. The ultimate goal is 100% happiness.</p>
 
-      <p>After every interaction with our support team, a customer is asked to rate the experience by clicking one of three ratings: “It was great” (happy face), “It was OK” (flat-line face), or “It wasn’t good” (frown face). <a href="/assets/img/survey.png">Here’s what the choices look like</a> on the ticket.</p>
-
-      <h4>This is how we get better</h4>
-      <p>We study these ratings to help us improve. Every customer interaction is an opportunity to get better. The ultimate goal is 100% happiness.</p>
-
-      <h4>Full transparency and accountability</h4>
-      <p>We’ve made these ratings public so everyone knows how we’re doing. We want to be held to the highest possible standards for customer service. Full transparency keeps us honest.</p>
+			<h4>Full transparency and accountability</h4>
+			<p>We’ve made these ratings public so everyone knows how we’re doing. We want to be held to the highest possible standards for customer service. Full transparency keeps us honest.</p>
 		</div>
+		
 		<div class="large-6 columns">
 			<div class="card panel">
 				<h4 class="card-title">Last 100 customer ratings</h4>
 				<?php smileyRatings(); ?>
 			</div>
 		</div>
+		
 	</div>
 	
 	<hr />
 	
 	<div class="row">
 		<div class="large-12 large-centered columns">
-			<h2 class="text-center">The team that makes our customer happy</h2>
+			<h2 class="text-center">The team that makes our customers happy</h2>
 			<div class="row">
 				<div class="list-centered">
 					<ul>
 					<?php foreach( $support_emails as $name => $email ) {
 					$hash = gravatarHash($email); ?>
 						<li class="large-block-grid-4">
-							<img src="http://www.gravatar.com/avatar/<?php echo $hash; ?>?s=75" />
-							<p class="text-center gravatar"><?php echo $name; ?></p>
+							<img class="gravatar" src="http://www.gravatar.com/avatar/<?php echo $hash; ?>?s=75" />
+							<p class="text-center support-name"><?php echo $name; ?></p>
 						</li>
 					<?php } ?>
 					</ul>
