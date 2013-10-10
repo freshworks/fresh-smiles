@@ -6,7 +6,11 @@ if ( $_SERVER['APP_ENV'] == 'production' ) {
 } else {
   require_once(__DIR__ . '/inc/config.php');
 }
-require_once(__DIR__ . '/inc/smiley-config.php');
+if ( $_SERVER['APP_ENV'] == 'production' ) {
+	require_once(__DIR__ . '/inc/smiley-config-pagodabox.php');
+} else {
+	require_once(__DIR__ . '/inc/smiley-config.php');
+}
 require_once(__DIR__ . '/inc/lib.php');
 
 //Connect to MySQL
