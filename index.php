@@ -109,8 +109,10 @@ mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
 </div><!-- #page -->
 
 <div class="row">
-	<div class="large-12 large-centered columns">
-		<h2 class="text-center">The last 100 customer support ratings.</h2>
+	<div class="large-12 large-centered columns pitch">
+		<h2 class="text-center">Interested in becoming a customer?</h2>
+		<p>Freelance Developers, Agencies, Fortune 500 Companies and Educational Institutions all trust us to keep WordPress running and make them smile.
+		<p class="text-center"><a href="https://my.zippykid.com/signup/?ref=smiley" class="button radius">Sign Up Now</a></p>
 	</div>
 </div>
 

@@ -27,6 +27,9 @@ div.list-centered ul > li:first-child { margin-left: 0; }
 
 .hundred { padding: 0 3px 0 0px; }
 
+div.pitch h2 { color: #FFF; }
+div.pitch { color: #FFF; }
+
 /* Colors of Happiness */
 .icon-smile, .icon-meh, .icon-frown { text-shadow: 0 1px 1px rgba(153, 153, 153, 0.8); }
 
