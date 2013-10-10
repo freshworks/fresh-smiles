@@ -5,7 +5,11 @@
  **/
 
 //Require the main configuration
-require_once('inc/config.php');
+if ( $_SERVER['APP_ENV'] == 'production' ) {
+  require_once(__DIR__ . 'inc/config-pagodabox.php');
+} else {
+  require_once(__DIR__ . 'inc/config.php');
+}
 
 //Require Smiley Library
 require_once('inc/lib.php');

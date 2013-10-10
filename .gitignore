@@ -1,2 +1,4 @@
 inc/config.php
 inc/smiley-config.php
+
+.DS_Store
