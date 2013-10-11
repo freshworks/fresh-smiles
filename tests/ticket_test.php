@@ -5,13 +5,13 @@
  **/
 
 //Require the main configuration
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/config.php');
+require_once('../inc/config.php');
 
 //Require the FreshDesk API Library
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/FreshdeskRest.php');
+require_once('../inc/FreshdeskRest.php');
 
 //Require Smiley Library
-require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/lib.php');
+require_once('../inc/lib.php');
 
 //Connect to MySQL
 mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
