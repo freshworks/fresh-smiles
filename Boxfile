@@ -3,4 +3,5 @@ web1:
   php_extensions:
     - curl
     - json
+    - mysql
     - mysqli
