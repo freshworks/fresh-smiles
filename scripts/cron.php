@@ -5,7 +5,7 @@
  **/
 
 //Require the main configuration
-if ( $_SERVER['APP_ENV'] == 'production' ) {
+if ( isset($_SERVER['APP_ENV']) == 'production' ) {
   require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/config-pagodabox.php');
 } else {
   require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/config.php');

@@ -1,12 +1,12 @@
 <?php
 // ** Get the Smiley Front End Configuration Information ** //
 //Require the main configuration
-if ( $_SERVER['APP_ENV'] == 'production' ) {
+if ( isset($_SERVER['APP_ENV']) == 'production' ) {
   require_once(__DIR__ . '/inc/config-pagodabox.php');
 } else {
   require_once(__DIR__ . '/inc/config.php');
 }
-if ( $_SERVER['APP_ENV'] == 'production' ) {
+if ( isset($_SERVER['APP_ENV']) == 'production' ) {
 	require_once(__DIR__ . '/inc/smiley-config-pagodabox.php');
 } else {
 	require_once(__DIR__ . '/inc/smiley-config.php');
