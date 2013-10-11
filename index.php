@@ -57,7 +57,7 @@ if ( file_exists(__DIR__ . '/inc/analytics.php') ) {
 			<p>After a ticket has been closed through our support portal, customers receive an email that confirms the issue has been resolved, and then asks them to rate the experience by clicking one of three ratings: “Awesome” (smiley face), “Just OK” (neutral face), or “Not Good” (sad face). <a href="/assets/img/survey.png">Here’s what the choices look like</a> on the ticket.</p>
 			
 			<h4>Why do we do it?</h4>
-			<p>We gather these ratings so that we can constantly monitor the satisfaction of our customers and performance of our agents.</p>
+			<p>We gather these ratings so that we can constantly monitor the satisfaction of our customers and performance of our happiness delivery team. We’re always looking for ways to get better, and these ratings are shared with the whole company on a weekly basis to help us improve.</p>
 
 			<h4>Why is it public?</h4>
 			<p>We believe that we provide the best platform for WordPress hosting and the best support in the industry to match that. Instead of telling you that, we prove it with the real ratings from real customers.</p>
@@ -111,7 +111,7 @@ if ( file_exists(__DIR__ . '/inc/analytics.php') ) {
 	<div class="row">
 		<div class="large-12 large-centered columns">
 			<h2 class="text-center">Customer Happiness is what we believe.</h2>
-			<p>We're rated highest in customer happiness because of our superior hosting architecture and dependable customer service. Our team looks for opportunities to go above and beyond at every interaction so that you can spend less time dealing with hosting and more time making your customers happy.</p>
+			<p>We're rated highest in customer happiness because of our superior hosting architecture and dependable customer service. Our team looks for opportunities to go above and beyond at every interaction so that you can spend less time dealing with hosting and more time making your customers happy. We focus on customer happiness instead of customer acquisition.</p>
 		</div>
 	</div>
 	
