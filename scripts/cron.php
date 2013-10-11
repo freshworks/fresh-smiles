@@ -8,17 +8,17 @@
 ignore_user_abort(true);
 
 //Require the main configuration
-require_once(__DIR__ . '../inc/config.php');
+require_once(__DIR__ . '/../inc/config.php');
 
 //Require Smiley Library
-require_once(__DIR__ . '../inc/lib.php');
+require_once(__DIR__ . '/../inc/lib.php');
 
 //Connect to MySQL
 mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
 @mysql_select_db(DB_NAME) or die("Unable to select database");
 
 //Require the FreshDesk API Library
-require_once(__DIR__ . '../inc/FreshdeskRest.php');
+require_once(__DIR__ . '/../inc/FreshdeskRest.php');
 
 //Create New FreshDesk API Object
 $fd = new FreshdeskRest(FD_URL, FD_API_USER, FD_API_PASS);
