@@ -53,19 +53,19 @@ if ( file_exists(__DIR__ . '/inc/analytics.php') ) {
 
 	<div class="row">
 		<div class="large-6 columns">
-			<h4>How we measure customer happiness</h4>
-			<p>After every interaction with our support team, a customer is asked to rate the experience by clicking one of three ratings: “It was great” (happy face), “It was OK” (flat-line face), or “It wasn’t good” (frown face). <a href="/assets/img/survey.png">Here’s what the choices look like</a> on the ticket.</p>
+			<h4>How are these ratings gathered?</h4>
+			<p>After a ticket has been closed through our support portal, customers receive an that confirms the issue has been resolved, and then asks them to rate the experience by clicking one of three ratings: “Awesome” (smiley face), “Just OK” (neutral face), or “Not Good” (sad face). <a href="/assets/img/survey.png">Here’s what the choices look like</a> on the ticket.</p>
 			
-			<h4>This is how we get better</h4>
-			<p>We study these ratings to help us improve. Every customer interaction is an opportunity to get better. The ultimate goal is 100% happiness.</p>
+			<h4>Why do we do it?</h4>
+			<p>We gather these ratings so that we can constantly monitor the satisfaction of our customers and performance of our agents.</p>
 
-			<h4>Full transparency and accountability</h4>
-			<p>We’ve made these ratings public so everyone knows how we’re doing. We want to be held to the highest possible standards for customer service. Full transparency keeps us honest.</p>
+			<h4>Why is it public?</h4>
+			<p>We believe that we provide the best platform for WordPress hosting and the best support in the industry to match that. Instead of telling you that, we prove it with the real ratings from real customers.</p>
 		</div>
 		
 		<div class="large-6 columns">
 			<div class="card panel">
-				<h4 class="card-title">Last 100 customer ratings</h4>
+				<h4 class="card-title">The Last 100 Customer Ratings</h4>
 				<?php smileyRatings(); ?>
 			</div>
 		</div>
@@ -76,7 +76,7 @@ if ( file_exists(__DIR__ . '/inc/analytics.php') ) {
 	
 	<div class="row">
 		<div class="large-12 large-centered columns">
-			<h2 class="text-center">The team that makes our customers happy</h2>
+			<h2 class="text-center">Our Happiness Delivery Team</h2>
 			<div class="row">
 				<div class="list-centered">
 					<ul>
@@ -106,8 +106,8 @@ if ( file_exists(__DIR__ . '/inc/analytics.php') ) {
 	
 	<div class="row">
 		<div class="large-12 large-centered columns">
-			<h2 class="text-center">We strive for happiness — not satisfaction.</h2>
-			<p>The customer service industry is obsessed with “customer satisfaction”. We believe that’s too low a bar. Satisfaction is not a measure of success — it’s just enough to get by. We want our customers to be happy. Happiness is success. Happiness is our goal.</p>
+			<h2 class="text-center">Customer Happiness is what we Believe</h2>
+			<p>We're rated highest in customer happiness because of our superior hosting architecture and dependable customer service. Our team looks for opportunities to go above and beyond at every interaction so that you can spend less time dealing with hosting and more time making your customers happy.</p>
 		</div>
 	</div>
 	
