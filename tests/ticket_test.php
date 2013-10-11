@@ -5,11 +5,7 @@
  **/
 
 //Require the main configuration
-if ( isset($_SERVER['APP_ENV']) == 'production' ) {
-  require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/config-production.php');
-} else {
-  require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/config.php');
-}
+require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/config.php');
 
 //Require the FreshDesk API Library
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/FreshdeskRest.php');
