@@ -17,7 +17,7 @@ mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ZippyKid Smiley | The Most Reliable WordPress Hosting & Dependable Support</title>
+<title>ZippyKid Customer Happiness Report</title>
 <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
 <link rel="stylesheet" href="assets/css/foundation.css">
 <link rel="stylesheet" href="assets/css/layout.css">
