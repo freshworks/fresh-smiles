@@ -47,14 +47,14 @@ if ( file_exists(__DIR__ . '/inc/analytics.php') ) {
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
-			<h1 class="site-title"><i class="icon-smile icon-2x happy"></i><br>ZippyKid Customer Support<br>Happiness Report</h1>
+			<h1 class="site-title"><i class="icon-smile icon-2x happy"></i><br>ZippyKid Customer Happiness Report</h1>
 		</div>
 	</header><!-- #masthead -->
 
 	<div class="row">
 		<div class="large-6 columns">
 			<h4>How are these ratings gathered?</h4>
-			<p>After a ticket has been closed through our support portal, customers receive an that confirms the issue has been resolved, and then asks them to rate the experience by clicking one of three ratings: “Awesome” (smiley face), “Just OK” (neutral face), or “Not Good” (sad face). <a href="/assets/img/survey.png">Here’s what the choices look like</a> on the ticket.</p>
+			<p>After a ticket has been closed through our support portal, customers receive an email that confirms the issue has been resolved, and then asks them to rate the experience by clicking one of three ratings: “Awesome” (smiley face), “Just OK” (neutral face), or “Not Good” (sad face). <a href="/assets/img/survey.png">Here’s what the choices look like</a> on the ticket.</p>
 			
 			<h4>Why do we do it?</h4>
 			<p>We gather these ratings so that we can constantly monitor the satisfaction of our customers and performance of our agents.</p>
@@ -67,6 +67,10 @@ if ( file_exists(__DIR__ . '/inc/analytics.php') ) {
 			<div class="card panel">
 				<h4 class="card-title">The Last 100 Customer Ratings</h4>
 				<?php smileyRatings(); ?>
+			</div>
+			
+			<div class="row">
+				<p class="quote text-center"><i>“I started ZippyKid because I felt many clients were spending too much time thinking about optimizing their servers for WordPress, instead of using WordPress to grow their business. With each happy customer, we achieve our mission to help clients get back to what matters most, like creating great content and building amazing WordPress websites.”</i><br /> - <strong>Vid Luther, CEO & Founder at ZippyKid</strong></p>
 			</div>
 		</div>
 		
@@ -106,7 +110,7 @@ if ( file_exists(__DIR__ . '/inc/analytics.php') ) {
 	
 	<div class="row">
 		<div class="large-12 large-centered columns">
-			<h2 class="text-center">Customer Happiness is what we Believe</h2>
+			<h2 class="text-center">Customer Happiness is what we believe.</h2>
 			<p>We're rated highest in customer happiness because of our superior hosting architecture and dependable customer service. Our team looks for opportunities to go above and beyond at every interaction so that you can spend less time dealing with hosting and more time making your customers happy.</p>
 		</div>
 	</div>

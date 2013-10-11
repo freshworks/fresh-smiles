@@ -9,10 +9,12 @@
 .card { text-align: center; }
 .card .card-title { text-align: center; }
 .card .overall { border-bottom: 1px solid #ccc; margin-bottom: 0.71429em; }
-.card .happy-score { background-color: #5da423; text-shadow: 0 2px 0 #360; margin: 20px 0 5px 8px; border-radius: 3px; padding: 5px 10px; font-size: 2em; color: #FFF; float: right; font-weight: bold; }
+.card .happy-score { background-color: #5da423; text-shadow: 0 2px 0 #360; margin: 20px 0 5px 8px; border-radius: 3px; padding: 5px 10px; font-size: 1.65em; color: #FFF; float: right; font-weight: bold; }
 .card .overall-score { font-size: 5.71429em; }
 
 li.rating-text { font-size: 15px; padding-bottom: 0; }
+
+p.quote { font-size: 14px; margin-right: 15px; }
 
 .meter { text-align: center; }
 .meter .icon { font-size: 5.14286em; }
