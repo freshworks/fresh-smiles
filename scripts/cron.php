@@ -4,6 +4,9 @@
  * Project: zk-smiley
  **/
 
+//Stuff to make it not die
+ignore_user_abort(true);
+
 //Require the main configuration
 require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/config.php');
 
