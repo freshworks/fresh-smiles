@@ -129,6 +129,24 @@ if ( file_exists(__DIR__ . '/inc/analytics.php') ) {
 	</div>
 </div>
 
+<div class="row">
+	<div class="large-4 large columns">
+		<div class="left">
+			<p>Inspired by <a href="http://smiley.37signals.com/" title="37 Signals Smiley">37 Signals Smiley</a></p>
+		</div>
+	</div>
+	<div class="large-4 large columns">
+		<div class="text-center">
+			<p>Copyright &copy; 2013 ZippyKid, Inc.</p>
+		</div>
+	</div>
+	<div class="large-4 large columns">
+		<div class="right">
+			<p>Designed by Justin at <a href="http://sixteenbit.com/" title="Responsive Design and Development">Sixteenbit</a></p>
+		</div>
+	</div>
+</div>
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="assets/js/holder.min.js"></script>
 </body>
