@@ -6,20 +6,20 @@
 
 //Require the main configuration
 if ( $_SERVER['APP_ENV'] == 'production' ) {
-  require_once('/inc/config-pagodabox.php');
+  require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/config-pagodabox.php');
 } else {
-  require_once('/inc/config.php');
+  require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/config.php');
 }
 
 //Require Smiley Library
-require_once('/inc/lib.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/lib.php');
 
 //Connect to MySQL
 mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
 @mysql_select_db(DB_NAME) or die("Unable to select database");
 
 //Require the FreshDesk API Library
-require_once('/inc/FreshdeskRest.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/inc/FreshdeskRest.php');
 
 //Create New FreshDesk API Object
 $fd = new FreshdeskRest(FD_URL, FD_API_USER, FD_API_PASS);
