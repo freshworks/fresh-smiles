@@ -21,7 +21,7 @@ An application to connect to Freshdesk's Survey API and stores the data in a MyS
 
 ## Modules
 Built with:
-  - [FreshDesk Rest](https://github.com/phikai/freshdesk-rest) by phikai (Forked from [blak3r](https://github.com/blak3r/freshdesk-solutions))
+  - [FreshDesk Rest](https://github.com/phikai/freshdesk-rest) by [phikai](https://github.com/phikai) (Forked from [blak3r](https://github.com/blak3r/freshdesk-solutions))
   
 ## License
 Licensed under the MIT Licnese, see [LICENSE](license)
