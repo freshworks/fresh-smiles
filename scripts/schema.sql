@@ -1,4 +1,4 @@
-CREATE TABLE `zk_smiley` (
+CREATE TABLE `fresh_smiles` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
