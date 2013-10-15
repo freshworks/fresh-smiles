@@ -1,6 +1,6 @@
 # Fresh Smiles
 
-An application to connect to Freshdesk's Survey API and stores the data in a MySQL backend. There's also a template and functions to display the results on a pretty page. Inspired by [Smiley from 37 Signals](http://smiley.37signals.com).
+An application using the Freshdesk's Survey API and a PHP/MySQL backend for storing and displaying survey data. Also includes a complete template and functions to display the results on a pretty page. Inspired by [Smiley from 37 Signals](http://smiley.37signals.com).
 
 ## Requirements
 1. PHP
