@@ -1,7 +1,7 @@
 <?php
 /**
  * File: lib.php
- * Project: zk-smiley
+ * Project: fresh-smiles
  **/
  
  

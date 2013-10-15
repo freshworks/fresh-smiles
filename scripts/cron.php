@@ -1,7 +1,7 @@
 <?php
 /**
  * File: cron.php
- * Project: zk-smiley
+ * Project: fresh-smiles
  **/
 
 //Stuff to make it not die

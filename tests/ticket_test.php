@@ -1,7 +1,7 @@
 <?php
 /**
  * File: ticket_test.php
- * Project: zk-smiley
+ * Project: fresh-smiles
  **/
 
 //Require the main configuration
