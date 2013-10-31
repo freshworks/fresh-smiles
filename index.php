@@ -27,6 +27,8 @@ mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
 	<script type="text/javascript" src="assets/js/respond.min.js"></script>
 <![endif]-->
 
+<link rel="shortcut icon" href="assets/img/favicon.ico" />
+
 <?php
 //Conditionally include Google Analytics
 if ( file_exists(__DIR__ . '/inc/analytics.php') ) {
