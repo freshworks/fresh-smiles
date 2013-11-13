@@ -131,7 +131,7 @@ meta.foundation-mq-large { font-family: "only screen and (min-width: 1440px)"; w
 
 html, body { font-size: 100%; }
 
-body { background: #292f36; color: #666666; padding: 0; margin: 0; font-family: "faricy-new-web", Arial, sans-serif; font-weight: normal; font-style: normal; line-height: 1; position: relative; cursor: default; -webkit-font-smoothing: antialiased; -webkit-transition-delay: 0s; -webkit-transition-duration: 0.1s; -webkit-transition-property: all; -webkit-transition-timing-function: ease-in-out; }
+body { background: #292f36; color: #666666; padding: 0; margin: 0; font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; font-weight: normal; font-style: normal; line-height: 1; position: relative; cursor: default; }
 
 a:hover { cursor: pointer; }
 
@@ -484,7 +484,7 @@ p { font-family: inherit; font-weight: normal; font-size: 1em; line-height: 1.6;
 p aside { font-size: 1em; line-height: 1.6; font-style: normal; }
 
 /* Default header styles */
-h1, h2, h3, h4, h5, h6 { font-family: "faricy-new-web", Arial, sans-serif; font-weight: bold; font-style: normal; color: #333333; text-rendering: optimizeLegibility; margin-top: 0; margin-bottom: 0.35714em; line-height: 0.78571em; -webkit-font-smoothing: antialiased; -webkit-transition-delay: 0s; -webkit-transition-duration: 0.1s; -webkit-transition-property: all; -webkit-transition-timing-function: ease-in-out; }
+h1, h2, h3, h4, h5, h6 { font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; font-weight: bold; font-style: normal; color: #333333; text-rendering: optimizeLegibility; margin-top: 0; margin-bottom: 0.35714em; line-height: 0.78571em; }
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small { font-size: 60%; color: gray; line-height: 0; }
 
 h1 { font-size: 1.92857em; }
