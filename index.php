@@ -17,7 +17,7 @@ mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ZippyKid Customer Happiness Report</title>
+<title>Pressable Customer Happiness Report</title>
 <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
 <link rel="stylesheet" href="assets/css/foundation.css">
 <link rel="stylesheet" href="assets/css/layout.css">
@@ -41,7 +41,7 @@ if ( file_exists(__DIR__ . '/inc/analytics.php') ) {
 
 <div class="row logo">
 	<div class="large-12 columns">
-		<a title="The leader in WordPress Hosting" href="http://www.zippykid.com"><img src="assets/img/new-logo.png" /></a>
+		<a title="The leader in WordPress Hosting" href="http://www.pressable.com"><img src="assets/img/logo-pressable-reverse-large.png" /></a>
 	</div>
 </div>
 
@@ -49,7 +49,7 @@ if ( file_exists(__DIR__ . '/inc/analytics.php') ) {
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
-			<h1 class="site-title"><i class="icon-smile icon-2x happy"></i><br>ZippyKid Customer Happiness Report</h1>
+			<h1 class="site-title"><i class="icon-smile icon-2x happy"></i><br>Pressable Customer Happiness Report</h1>
 		</div>
 	</header><!-- #masthead -->
 
@@ -72,7 +72,7 @@ if ( file_exists(__DIR__ . '/inc/analytics.php') ) {
 			</div>
 			
 			<div class="row">
-				<p class="quote text-center"><i>“I started ZippyKid because I felt many clients were spending too much time thinking about optimizing their servers for WordPress, instead of using WordPress to grow their business. With each happy customer, we achieve our mission to help clients get back to what matters most, like creating great content and building amazing WordPress websites.”</i><br /> - <strong>Vid Luther, CEO & Founder at ZippyKid</strong></p>
+				<p class="quote text-center"><i>“I started Pressable because I felt many clients were spending too much time thinking about optimizing their servers for WordPress, instead of using WordPress to grow their business. With each happy customer, we achieve our mission to help clients get back to what matters most, like creating great content and building amazing WordPress websites.”</i><br /> - <strong>Vid Luther, CEO & Founder at Pressable</strong></p>
 			</div>
 		</div>
 		
@@ -82,7 +82,7 @@ if ( file_exists(__DIR__ . '/inc/analytics.php') ) {
 	
 	<div class="row">
 		<div class="large-12 large-centered columns">
-			<h2 class="text-center">Our Happiness Delivery Team</h2>
+			<h2 class="text-center">Our Customer Success Agents</h2>
 			<div class="row">
 				<div class="list-centered">
 					<ul>
@@ -127,11 +127,11 @@ if ( file_exists(__DIR__ . '/inc/analytics.php') ) {
 	<div class="large-12 large-centered columns pitch">
 		<h2 class="text-center">Interested in becoming a customer?</h2>
 		<p>Freelance Developers, Agencies, Fortune 500 Companies and Educational Institutions all trust us to keep WordPress running and make them smile.
-		<p class="text-center"><a href="https://my.zippykid.com/signup/?ref=smiley" class="button radius">Sign Up Now</a></p>
+		<p class="text-center"><a href="https://my.pressable.com/signup/?ref=smiley" class="button radius">Sign Up Now</a></p>
 	</div>
 </div>
 
-<div class="row">
+<div class="row footer-links">
 	<div class="large-4 large columns">
 		<div class="left">
 			<p>Inspired by <a href="http://smiley.37signals.com/" title="37 Signals Smiley">37 Signals Smiley</a></p>
@@ -139,7 +139,7 @@ if ( file_exists(__DIR__ . '/inc/analytics.php') ) {
 	</div>
 	<div class="large-4 large columns">
 		<div class="text-center">
-			<p>Copyright &copy; 2013 ZippyKid, Inc.</p>
+			<p>Copyright &copy; 2013 Pressable</p>
 		</div>
 	</div>
 	<div class="large-4 large columns">
