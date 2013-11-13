@@ -1,6 +1,7 @@
 /** Smiles for ZippyKid Developed by Sixteenbit */
 body {
-	background: #0e556f;
+	background: #244347;
+	color: #768388;
 	font-family: "faricy-new-web", Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
 	-webkit-transition-delay: 0s;
@@ -11,6 +12,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: "faricy-new-web", Arial, sans-serif;
+	color: #244347;
     -webkit-font-smoothing: antialiased;
 	-webkit-transition-delay: 0s;
 	-webkit-transition-duration: 0.1s;
@@ -35,7 +37,12 @@ a { color: #5a8d9f; font-weight: 700; border-bottom: 1px dotted #444; }
 
 li.rating-text { font-size: 15px; padding-bottom: 0; }
 
-p.quote { font-size: 14px; margin-right: 15px; }
+p { font-size: .9em; }
+
+p.quote { 
+	font-size: .9em;
+	padding: 0 15px;
+}
 
 .meter { text-align: center; }
 .meter .icon { font-size: 5.14286em; }
