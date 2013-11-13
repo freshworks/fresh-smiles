@@ -131,7 +131,7 @@ meta.foundation-mq-large { font-family: "only screen and (min-width: 1440px)"; w
 
 html, body { font-size: 100%; }
 
-body { background: #292f36; color: #666666; padding: 0; margin: 0; font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; font-weight: normal; font-style: normal; line-height: 1; position: relative; cursor: default; }
+body { background: #292f36; color: #666666; padding: 0; margin: 0; font-family: "faricy-new-web", Arial, sans-serif; font-weight: normal; font-style: normal; line-height: 1; position: relative; cursor: default; -webkit-font-smoothing: antialiased; -webkit-transition-delay: 0s; -webkit-transition-duration: 0.1s; -webkit-transition-property: all; -webkit-transition-timing-function: ease-in-out; }
 
 a:hover { cursor: pointer; }
 

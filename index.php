@@ -22,6 +22,8 @@ mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
 <link rel="stylesheet" href="assets/css/foundation.css">
 <link rel="stylesheet" href="assets/css/layout.css">
 <script src="assets/js/custom.modernizr.js"></script>
+<script type="text/javascript" src="//use.typekit.net/myx0fpm.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 <!--[if lt IE 9]>
 	<script type="text/javascript" src="assets/js/html5shiv.js"></script>
 	<script type="text/javascript" src="assets/js/respond.min.js"></script>
