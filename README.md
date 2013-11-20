@@ -30,4 +30,4 @@ Licensed under the MIT Licnese, see [LICENSE](license)
 If you'd like to contribute to the project feel free to submit issues or pull requests to the project.
 
 ## Example
-[ZippyKid Customer Happiness Report](http://smiley.zippykid.com)
+[Pressable Customer Happiness Report](http://smiley.pressable.com)
