@@ -6,6 +6,7 @@ An application using the Freshdesk Survey API and a PHP/MySQL backend for storin
 1. PHP
 2. MySQL
 3. Cron
+4. Curl for PHP
 
 ## Installation
 1. Setup a MySQL Table using /scrips/schema.sql
