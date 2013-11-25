@@ -1,0 +1,325 @@
+
+/* Reset css */
+*{
+    box-sizing: border-box;
+}
+
+article, header, nav, section, footer{
+    display: block;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-weight: 300;
+    margin: 5px 0px;
+}
+
+h2{
+    font-size: 34px;
+}
+
+h4{
+    font-size: 24px;
+}
+
+p{
+    font-size: 16px;
+    font-weight: 300;
+}
+
+a {
+    text-decoration: none;
+    color: #16A085;
+}
+html {
+    color: #333;
+    -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%; 
+                   font-size: 100%; 
+}
+
+.cf:before, .cf:after {
+    content: " "; 
+    display: table; 
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
+
+body {
+    font-size: 1em;
+    margin: 0;
+    line-height: 1.4;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: normal;
+    box-sizing: border-box;
+}
+
+a:active, a:hover {
+    outline: 0;
+}
+
+ul, ol {
+    list-style: none;
+    list-style-image: none;
+}
+
+img {
+    border: 0;
+    -ms-interpolation-mode: bicubic; 
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.text_center{
+    text-align: center;
+}
+
+.chromeframe {
+    margin: 0 0 0.2em;
+    background: #ccc;
+    color: #000;
+    text-align: center;
+    padding: 0.4em 0;
+}
+
+.top_space{
+    padding-top: 20px;
+}
+
+.pull_right{
+    float: right;
+}
+
+/* Layout */
+
+.cr_wrapper{
+    background-color: #fff;
+    padding-bottom: 20px;
+}
+
+.cr_page{
+    width: 1120px;
+    margin: 0 auto;
+}
+
+header{
+    padding: 36px 0px;
+}
+
+header .logo{
+    width: 210px;
+    height: 50px;
+    margin: 0 auto;
+    display: block;
+}
+
+.cr_banner{
+    background-color: #f7f7f7;
+    border-top: 1px #e9eeee solid;   
+    border-bottom: 1px #e9eeee solid;
+    min-height: 250px;
+    padding: 30px 0px;
+}
+
+h1{
+    font-size: 60px;
+}
+
+.cr_feedback{
+    float: left;
+    width: 450px;
+    padding-top: 40px;
+}
+
+.cr_feedback h3{
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.cr_feedback blockquote{
+    font-style: italic;
+    margin: 10px 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 300;
+    color: #666;
+}
+
+.cr_feedback p{
+    text-align: right;
+}
+
+.cr_feedback p span{
+    padding-right: 10px;
+}
+
+.main_smiley img{
+    border-radius: 50%;
+    border: 10px #fff solid;
+    box-shadow: 0px 0px 0px 1px #394606;
+    width: 200px;
+    height: 200px;
+    float: left;
+    position: relative;
+    z-index: 1;
+}
+
+.report_message_wrap{
+    width: 420px;
+    float: left;
+}
+
+.report_message{
+    font-size: 38px;
+    width: 414px;
+    color: #fff;
+    float: left;
+    border-radius: 30px;
+    padding: 5px;
+    margin: 60px 0px 0px -40px;
+    text-indent: 14px;
+}
+
+.cr_main_report{
+    padding-left: 20px;
+    float: right;
+    width: 400px;
+    width: 650px;
+}
+
+.cr_sub_report{
+    float: left;
+    width: 414px;
+}
+.cr_sub_report div{
+    float: left;
+    width: 200px;
+}
+
+
+.cr_sub_report img{
+    width: 36px;
+    height: 36px;
+    border: none;
+    box-shadow: none;
+}
+.cr_sub_report span{
+    position: relative;
+    top: 6px;
+    padding-left: 4px;
+}
+
+/* Classes for happy, sad & okay background */
+
+.main_smiley .happy{
+    background-color: #394606;
+}
+
+.main_smiley .okay{
+    background-color: #853b0a;
+}
+
+.main_smiley .sad{
+    background-color: #8a0706;
+}
+
+.happy_text, .okay_text, .sad_text{
+    font-size: 16px;
+}
+
+.happy_text{
+    color: #85a30f;
+}
+
+.okay_text{
+    color: #e58d2f;
+}
+
+.sad_text{
+    color: #db4f4f;
+}
+
+/* Description widget */
+
+.cr_description_widget{
+    width: 372px;
+    float: left;
+    padding: 10px;
+}
+
+.cr_agents{
+    border-top: 1px #eaeaea solid;
+    border-bottom: 1px #eaeaea solid;
+}
+
+.cr_agents li{
+    width: 104px;
+    height: 104px;
+    background-color: #f7f7f7;
+    border: 1px #ebecec solid;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0px 50px;
+}
+.cr_agents li img{
+    border-radius: 50%
+}
+
+.cr_agents li span{
+    margin-top: 10px;
+    display: block;
+}
+
+.cr_agents, .cr_ratings{
+    padding: 20px 0;
+}
+
+.cr_ratings{
+    border-bottom: 1px #eaeaea solid;
+}   
+
+.cr_ratings img{
+    width: 36px;
+    height: 36px;
+    float: left;
+    margin: 10px;
+}
+
+/* Ratings smiley using span element */
+.happy_smiley, .okay_smiley, .sad_smiley{
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    margin: 10px;
+    float: left;
+}
+
+.happy_smiley{
+    background: url(../img/smiley_happy.png) no-repeat;
+}
+
+.okay_smiley{
+    background: url(../img/smiley_okay.png) no-repeat;
+}
+
+.sad_smiley{
+    background: url(../img/smiley_sad.png) no-repeat;
+}
+

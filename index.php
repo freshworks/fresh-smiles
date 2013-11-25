@@ -10,148 +10,149 @@ mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
 @mysql_select_db(DB_NAME) or die("Unable to select database");
 
 ?>
-
 <!DOCTYPE html>
-<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en-US" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US" > <!--<![endif]-->
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pressable Customer Happiness Report</title>
-<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
-<link rel="stylesheet" href="assets/css/foundation.css">
-<link rel="stylesheet" href="assets/css/layout.css">
-<script src="assets/js/custom.modernizr.js"></script>
-<script type="text/javascript" src="//use.typekit.net/myx0fpm.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-<!--[if lt IE 9]>
-	<script type="text/javascript" src="assets/js/html5shiv.js"></script>
-	<script type="text/javascript" src="assets/js/respond.min.js"></script>
-<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Freshdesk Customer Happiness Report</title>
+        <link rel="shortcut icon" href="favicon.ico" />
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/main.css">
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet' type='text/css'>
+        <script src="js/vendor/html5shiv.js"></script>
+        <!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+        <![endif]-->
+    </head>
+    <body>
+        <!--[if lt IE 9]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <script type="text/javascript">
+        function constructSmiles(smiles) {
+        	var length = smiles.length,
+        		classes = {1: 'happy_smiley', 2: 'okay_smiley', 3: 'sad_smiley'} ;
 
-<link rel="shortcut icon" href="assets/img/favicon.ico" />
+        	var hundred = document.getElementById('hundred-smiles');
+        	for (var i = 0; i < length; i++) {
+        		var span = document.createElement('span');
+        		span.className = classes[smiles[i]];
+        		hundred.appendChild(span);
+        	};
+        }
+        </script>
 
+        <div class="cr_wrapper cf">
+
+            <!--Header-->
+            <header class="cr_page cf">
+                <img src="img/freshdesk_logo.png" alt="freshdesk_logo" class="logo">
+            </header>
+
+            <!--Banner section-->
+            <section class="cr_banner cf">
+                <h1 class="text_center">Customer Happiness Report</h1>
 <?php
 //Conditionally include Google Analytics
 if ( file_exists(__DIR__ . '/inc/analytics.php') ) {
 	require_once(__DIR__ . '/inc/analytics.php');
 }
 ?>
+                <h2 class="text_center">Based on Last 100 Customer Ratings updated every 4 hours</h2>
+                <div class="cr_page cf top_space">
+                    <div class="cr_feedback">
+                        <h3>I can finally relax</h3>
+                        <blockquote>
+                            “We were testing a lot of Helpdesk systems, but Freshdesk was clearly the best. We now offer multi-brand support to our customers in Slovakia, the Czech Republic, Poland and Russia!”  
+                        </blockquote>
+                        <p> <span>- Jana Kalasova </span> <img src="img/customer_logo.png" alt="customer_logo" width="123" height="18" ></p>
+                    </div>
 
-</head>
-<body>
+                    <div class="cr_main_report">
+                        <div class="main_smiley cf">
+                            <img src="img/smiley_happy_big.png" alt="customer-happy">
+                            <div class="report_message_wrap">
+                                <?php displayOverall() ?>
+                            </div>
+                        </div>
+                       
+                    </div>
 
-<div class="row logo">
-	<div class="large-12 columns">
-		<a title="The leader in WordPress Hosting" href="http://www.pressable.com"><img src="assets/img/logo-pressable-reverse-large.png" /></a>
-	</div>
-</div>
+                </div>
+            </section>
 
-<div id="page" class="site">
+            <!--Content section-->
 
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<h1 class="site-title"><i class="icon-smile icon-2x happy"></i><br>Pressable Customer Happiness Report</h1>
-		</div>
-	</header><!-- #masthead -->
+            <section class="cr_page">
 
-	<div class="row">
-		<div class="large-6 columns">
-			<h4>How are these ratings gathered?</h4>
-			<p>After a ticket has been closed through our support portal, customers receive an email that requests an assessment of the experience by clicking one of three ratings: “Awesome” (smiley face), “Just OK” (neutral face), or “Not Good” (sad face). <a href="/assets/img/survey.png">Here’s what the choices look like</a> on the ticket.</p>
-			
-			<h4>Why do we do it?</h4>
-			<p>We gather these ratings so that we can constantly monitor the satisfaction of our customers and performance of our Happiness Delivery Team. We’re always looking for ways to do better, and these ratings are shared with the whole company on a weekly basis to help us improve.</p>
+                <!-- description widgets section -->
+                <div class="top_space cf">
+                    <div class="cr_description_widget">
+                        <h4>Where do these metrics come from?</h4>
+                        <p>
+                        	From you, our customers. 
+                        	Everytime we resolve one of your tickets, you get an email asking you for feedback on your recent support experience. 
+                        	This report is a collection of the last 100 ratings we got from customers like you.
+                        </p>
+                    </div>
 
-			<h4>Why is it public?</h4>
-			<p>We believe that we provide the best platform for WordPress hosting and the best support in the industry to match that. Instead of telling you that, we prove it with real ratings from real customers.</p>
-		</div>
-		
-		<div class="large-6 columns">
-			<div class="card panel">
-				<h4 class="card-title">The Last 100 Customer Ratings</h4>
-				<?php smileyRatings(); ?>
-			</div>
-			
-			<div class="row">
-				<p class="quote text-center"><i>“I started Pressable because I felt many clients were spending too much time thinking about optimizing their servers for WordPress, instead of using WordPress to grow their business. With each happy customer, we achieve our mission to help clients get back to what matters most, like creating great content and building amazing WordPress websites.”</i><br /> - <strong>Vid Luther, CEO & Founder at Pressable</strong></p>
-			</div>
-		</div>
-		
-	</div>
-	
-	<hr />
-	
-	<div class="row">
-		<div class="large-12 large-centered columns">
-			<h2 class="text-center">Our Customer Success Agents</h2>
-			<div class="row">
-				<div class="list-centered">
-					<ul>
-					<?php foreach( $support_emails as $name => $email ) {
-					$hash = gravatarHash($email); ?>
-						<li class="large-block-grid-4">
-							<img class="gravatar" src="http://www.gravatar.com/avatar/<?php echo $hash; ?>?s=75" />
-							<p class="text-center support-name"><?php echo $name; ?></p>
-						</li>
-					<?php } ?>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<hr />
-	
-	<div class="row">
-		<div class="large-12 large-centered columns">
-			<h2 class="text-center">The last 100 customer support ratings.</h2>
-			<?php hundredSmiles(); ?>
-		</div>
-	</div>
-	
-	<hr />
-	
-	<div class="row">
-		<div class="large-12 large-centered columns">
-			<h2 class="text-center">Customer Happiness is what we believe.</h2>
-			<p>We're rated highest in customer satisfaction because of our superior hosting architecture and dependable customer service. Our team looks for opportunities to go above and beyond at every interaction so that you can spend less time dealing with hosting and more time making your customers happy. We focus on customer happiness instead of customer acquisition.</p>
-		</div>
-	</div>
-	
-	<footer id="colophon" class="site-footer" role="contentinfo">
-	
-	</footer><!-- #colophon -->
+                    <div class="cr_description_widget">
+                        <h4>What do they mean?</h4>
+                        <p>
+                        	Quite a bit, actually.
+                        	We believe every single support ticket is a  chance to wow a customer. 
+							And every time we get a “not good” or “ok” response, it kills us a bit. 
+							The report is a good indicator of how well we’ve been on our mission. 
+                        </p>
+                    </div>
 
-</div><!-- #page -->
+                    <div class="cr_description_widget">
+                        <h4>Why is it public?</h4>
+                        <p>
+                        	We think throwing our support ratings open to the world works way better than 
+                        	just promising you great support and transparency with words. 
+                        	Plus, we are accountable for making you delirious with joy. 
+                        	And here’s to prove it. 
+                        </p>
+                    </div>
+                </div>
 
-<div class="row">
-	<div class="large-12 large-centered columns pitch">
-		<h2 class="text-center">Interested in becoming a customer?</h2>
-		<p>Freelance Developers, Agencies, Fortune 500 Companies and Educational Institutions all trust us to keep WordPress running and make them smile.
-		<p class="text-center"><a href="https://my.pressable.com/signup/?ref=smiley" class="button radius">Sign Up Now</a></p>
-	</div>
-</div>
+                <!-- Agents section -->
+                <div class="cf cr_agents cf">
+                    <h2 class="text_center">Our Customer Success Agents</h2>
+                    <ul class="text_center top_space">
+                        <li><img src="img/vijay.png" alt="Vijay Shankar"> <span>Vijay</span></li>
+                        <li><img src="img/arjun.png" alt="Arjun Paliath"> <span>Arjun</span></li>
+                        <li><img src="img/raghu.png" alt="Raghuvaran"> <span>Raghu</span></li>
+                        <li><img src="img/poorna.png" alt="Annapoorna"> <span>Poorna</span></li>
+                        <li><img src="img/bhargavi.png" alt="Bhargavi"> <span>Bhargavi</span></li>
+                    </ul>
+                </div>
 
-<div class="row footer-links">
-	<div class="large-4 large columns">
-		<div class="left">
-			<p>Inspired by <a href="http://smiley.37signals.com/" title="37 Signals Smiley">37 Signals Smiley</a></p>
-		</div>
-	</div>
-	<div class="large-4 large columns">
-		<div class="text-center">
-			<p>Copyright &copy; 2013 Pressable</p>
-		</div>
-	</div>
-	<div class="large-4 large columns">
-		<div class="right">
-			<p>Designed by Justin at <a href="http://sixteenbit.com/" title="Responsive Design and Development">Sixteenbit</a></p>
-		</div>
-	</div>
-</div>
+                <!-- Support customer ratings -->
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="assets/js/holder.min.js"></script>
-</body>
+                <div class="cf cr_ratings cf">
+                    <h2 class="text_center">The last 100 customer support ratings.</h2>
+                    <div class="top_space" id="hundred-smiles">
+                        
+                    </div>
+                </div>
+                <script type="text/javascript">
+                	constructSmiles(<?= hundredSmiles() ?>);
+                </script>
+
+                <div class="top_space cf">
+                    <h2 class="text_center">Happy Customers Say Cheese.</h2>
+                    <p class="text_center">
+                        We are a customer support company. Which means making customers happy isn’t just a metric for us - it’s our business. <br />
+                        <big><strong><a href="http://freshdesk.com/say-cheese">Showcase your support ratings and let your customers Say Cheese with Fresh Smiles.</a></strong></big>
+                        <br /><br /><br />
+                    </p>
+                </div>
+
+            </section>
+        </div>
+    </body>
 </html>
