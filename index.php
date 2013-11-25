@@ -123,12 +123,14 @@ if ( file_exists(__DIR__ . '/inc/analytics.php') ) {
                 <div class="cf cr_agents cf">
                     <h2 class="text_center">Our Customer Success Agents</h2>
                     <ul class="text_center top_space">
-                        <li><img src="img/vijay.png" alt="Vijay Shankar"> <span>Vijay</span></li>
-                        <li><img src="img/arjun.png" alt="Arjun Paliath"> <span>Arjun</span></li>
-                        <li><img src="img/raghu.png" alt="Raghuvaran"> <span>Raghu</span></li>
-                        <li><img src="img/poorna.png" alt="Annapoorna"> <span>Poorna</span></li>
-                        <li><img src="img/bhargavi.png" alt="Bhargavi"> <span>Bhargavi</span></li>
-                    </ul>
+					<?php foreach( $support_emails as $name => $email ) {
+					$hash = gravatarHash($email); ?>
+						<li>
+							<img class="gravatar" src="http://www.gravatar.com/avatar/<?php echo $hash; ?>?s=75" />
+							<span><?php echo $name; ?></span>
+						</li>
+					<?php } ?>
+					</ul>
                 </div>
 
                 <!-- Support customer ratings -->
