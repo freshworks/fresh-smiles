@@ -22,7 +22,7 @@ An application using the Freshdesk Survey API and a PHP/MySQL backend for storin
 ## Modules
 Built with:
   - [FreshDesk Rest](https://github.com/phikai/freshdesk-rest) by [phikai](https://github.com/phikai) (Forked from [blak3r](https://github.com/blak3r/freshdesk-solutions))
-  
+  - [Fresh-smiles from zippykid](https://github.com/zippykid/fresh-smiles) 
 ## License
 Licensed under the MIT Licnese, see [LICENSE](license)
 
@@ -30,4 +30,4 @@ Licensed under the MIT Licnese, see [LICENSE](license)
 If you'd like to contribute to the project feel free to submit issues or pull requests to the project.
 
 ## Example
-[Pressable Customer Happiness Report](http://smiley.pressable.com)
+[Freshdesk Customer Happiness Report](http://smiles.freshdesk.com)
