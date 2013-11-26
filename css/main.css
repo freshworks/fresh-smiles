@@ -1,7 +1,8 @@
-
 /* Reset css */
 *{
     box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
 }
 
 article, header, nav, section, footer{
@@ -17,13 +18,19 @@ h2{
     font-size: 34px;
 }
 
+h2.smaller{
+    font-size: 20px;
+    color: #999;
+}
+
 h4{
-    font-size: 24px;
+    font-size: 22px;
 }
 
 p{
     font-size: 16px;
     font-weight: 300;
+    line-height: 30px;
 }
 
 a {
@@ -132,9 +139,9 @@ header .logo{
 
 .cr_banner{
     background-color: #f7f7f7;
-    border-top: 1px #e9eeee solid;   
+    border-top: 1px #e9eeee solid;
     border-bottom: 1px #e9eeee solid;
-    min-height: 250px;
+    min-height: 440px;
     padding: 30px 0px;
 }
 
@@ -144,8 +151,8 @@ h1{
 
 .cr_feedback{
     float: left;
-    width: 450px;
-    padding-top: 40px;
+    width: 400px;
+    padding-top: 20px;
 }
 
 .cr_feedback h3{
@@ -172,8 +179,7 @@ h1{
 
 .main_smiley img{
     border-radius: 50%;
-    border: 10px #fff solid;
-    box-shadow: 0px 0px 0px 1px #394606;
+    box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.2);
     width: 200px;
     height: 200px;
     float: left;
@@ -188,25 +194,26 @@ h1{
 
 .report_message{
     font-size: 38px;
-    width: 414px;
+    /* width: 394px; */
     color: #fff;
     float: left;
-    border-radius: 30px;
-    padding: 5px;
-    margin: 60px 0px 0px -40px;
-    text-indent: 14px;
+    border-radius: 40px;
+    padding: 10px 35px;
+    margin: 32px 0px 0px 10px;
+    /* text-indent: 14px; */
 }
 
 .cr_main_report{
     padding-left: 20px;
     float: right;
     width: 400px;
-    width: 650px;
+    width: 680px;
 }
 
 .cr_sub_report{
     float: left;
-    width: 414px;
+    width: 454px;
+    padding: 20px 0px 0px 20px;
 }
 .cr_sub_report div{
     float: left;
@@ -229,7 +236,9 @@ h1{
 /* Classes for happy, sad & okay background */
 
 .main_smiley .happy{
-    background-color: #394606;
+    background-color: #90ac31;
+    color: #fff;
+    font-weight: 600;
 }
 
 .main_smiley .okay{
@@ -261,7 +270,7 @@ h1{
 .cr_description_widget{
     width: 372px;
     float: left;
-    padding: 10px;
+    padding-right: 40px;
 }
 
 .cr_agents{
