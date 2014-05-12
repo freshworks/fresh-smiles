@@ -115,6 +115,7 @@ function smileyRatings() {
 		$total = 0;
 		while( $rating = mysql_fetch_object($ratings) ) {
 			
+			error_log(print_r($rating, true));
 			if ( $rating->survey_rating == '1' || $rating->survey_rating == '2' || $rating->survey_rating == '3' ) {
 				$result[$rating->survey_rating] = $rating->count;
 				$total += $rating->count;
@@ -135,19 +136,20 @@ function displayOverall() {
 		else
 			$total += $ratings[$value];
 	}
-	$percent = ceil($ratings['1'] * 100 / $total);
-
+	foreach ($checks as $value) {
+		$percent[$value] = ceil($ratings[$value] * 100 / $total);
+	}
 	echo '<div class="report_message text_center happy ">
-                                    ' . $percent . '% said AWESOME!
+                                    ' . $percent['1'] . '% said AWESOME!
                                 </div>
                                  <div class="cr_sub_report top_space cf">
                                     <div class="okay_text">
                                         <img src="img/smiley_okay.png" alt="Customer_okay"> 
-                                        <span>' . ($ratings['2']). ' said just OK </span>
+                                        <span>' . ($percent['2']). '% said just OK </span>
                                     </div>
                                     <div class="sad_text">
                                         <img src="img/smiley_sad.png" alt="Customer_okay"> 
-                                        <span>' . ($ratings['3'] ). ' said not so good</span>
+                                        <span>' . ($percent['3'] ). '% said not so good</span>
                                     </div>
                                 </div>';
 }
