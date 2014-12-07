@@ -13,6 +13,15 @@ An application using the Freshdesk Survey API and a PHP/MySQL backend for storin
 2. Copy /inc/config-sample.php to /inc/config.php (local or private deployment)
 3. Copy /inc/smiley-config-sample.php to /inc/smiley-config.php (local or private deployment)
 4. Setup /scripts/cron.php to run via cronjob (1 hour or more)
+5. You can use webhooks and observer rules instead of cron jobs
+    - Create an Observer rule with this config:
+      - Event: Customer Feedback is Received, Rating: Any
+      - performed by: Any
+      - Actions: Trigger Webhook ->
+        - Callback URL: http://{{smiles.yourcompany.com}}/scripts/hook.php
+        - Encoding: X-FORM-URLENCODED
+        - Content: Simple, select just the Ticket ID.
+        - Save the Rule.
 
 ## Deployment
 1. Setup Project with DeployHQ

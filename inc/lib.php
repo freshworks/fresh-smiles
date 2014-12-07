@@ -24,7 +24,7 @@ function theTickets($fd, $viewId) {
 }
 
 //The main loop used to get survey data 
-function theLoop($fd, $i) {
+function theLoop($fd, $i, $use_current_time = false) {
 
 	$json = $fd->getTicketSurvey($i);
 	
@@ -65,6 +65,11 @@ function theLoop($fd, $i) {
 			foreach($raw as $key => $val){
 				$safe[$key] = mysql_real_escape_string($val);
 			}
+      
+      if ($use_current_time) {
+        $raw['survey_updated_at'] = 'NOW()';
+        $raw['survey_created_at'] = 'NOW()';
+      }
 			
 			$result = "INSERT INTO fresh_smiles(created_at, updated_at, survey_created_at, survey_updated_at, ticket_id, survey_rating) VALUES(NOW(), NOW(), '{$safe['survey_created_at']}', '{$safe['survey_updated_at']}', '{$i}', '{$safe['survey_rating']}') ON DUPLICATE KEY UPDATE updated_at=NOW(), survey_created_at='{$safe['survey_created_at']}', survey_updated_at='{$safe['survey_updated_at']}', survey_rating='{$safe['survey_rating']}'";
 						
