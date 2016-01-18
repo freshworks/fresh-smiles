@@ -4,6 +4,9 @@
  * Project: fresh-smiles
  **/
  
+ define ('AWESOME', 1);
+ define('OK', 2);
+ define('NOT_GOOD', 3);
  
 //This is used to return closed ticket IDs for Checking Survey Data
 function theTickets($fd, $viewId) {
@@ -116,19 +119,43 @@ function smileyRatings() {
 	if (!$ratings) {
 		die('Invalid query: ' . mysql_error());
 	} else {
-		$result = array();
+		$result = array(
+      AWESOME => 0,
+      OK => 0,
+      NOT_GOOD => 0
+    );
 		$total = 0;
 		while( $rating = mysql_fetch_object($ratings) ) {
 			
-			error_log(print_r($rating, true));
-			if ( $rating->survey_rating == '1' || $rating->survey_rating == '2' || $rating->survey_rating == '3' ) {
-				$result[$rating->survey_rating] = $rating->count;
-				$total += $rating->count;
-			}
+			$rating->result = normalize($rating);
+			$result[$rating->result] += $rating->count;
+			$total += $rating->count;
+      
 		}
-		$result['percent'] = isset($ratings['1']) ? ceil($ratings[1] * 100 / $total) : 0;
+		$result['percent'] = isset($ratings[AWESOME]) ? ceil($ratings[AWESOME] * 100 / $total) : 0;
 		return $result;
 	}
+}
+
+function normalize($rating) {
+  foreach (unserialize(AWESOME_RATINGS) as $val) {
+    if (intval($rating->survey_rating) == $val) {
+      return AWESOME;
+    }
+  }
+  foreach (unserialize(OK_RATINGS) as $val) {
+    if (intval($rating->survey_rating) == $val) {
+      return OK;
+    }
+  }
+  foreach (unserialize(NOT_GOOD_RATINGS) as $val) {
+    if (intval($rating->survey_rating) == $val) {
+      return NOT_GOOD;
+    }
+  }
+  
+  return OK;
+  
 }
 
 function displayOverall() {

@@ -30,3 +30,8 @@ define('FD_API_PASS', '');
 // ** Custom Ticket Views **//
 /* Closed Ticket View */
 define('CLOSED_VIEW', 'ID_OF_CLOSED_VIEW');
+
+
+define('AWESOME_RATINGS', serialize(array(1, ANOTHER_VALUE)));
+define('OK_RATINGS', serialize(array(2, ANOTHER_VALUE_FOR_OK)));
+define('NOT_GOOD_RATINGS', serialize(array(3, ANOTHER_VALUE_FOR_NOT_OK)));
