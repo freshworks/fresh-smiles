@@ -121,7 +121,7 @@ if ( file_exists(__DIR__ . '/inc/analytics.php') ) {
 
                 <!-- Agents section -->
                 <div class="cf cr_agents cf">
-                    <h2 class="text_center">Our Customer Success Agents</h2>
+                    <h2 class="text_center">Customer Happiness Heroes</h2>
                     <ul class="text_center top_space">
 					<?php foreach( $support_emails as $name => $email ) {
 					$hash = gravatarHash($email); ?>
