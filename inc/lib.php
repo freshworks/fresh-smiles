@@ -33,7 +33,7 @@ function theLoop($fd, $i, $use_current_time = false) {
 	
 	$response = $fd->getLastHttpResponseText();
 	
-	//Stupid FreshDesk doesn't give you status codes for this...
+	//Standard response codes is there only from API v2
 	if ( $response == "You have exceeded the limit of requests per hour" ) {
 		$result = "api_limit";
 	}
@@ -44,8 +44,6 @@ function theLoop($fd, $i, $use_current_time = false) {
 	
 	else if ( !isset($json[0]) ) {
 		$result = "continue";
-		// $result = "INSERT INTO fresh_smiles(created_at, updated_at, survey_created_at, survey_updated_at, ticket_id, survey_rating) VALUES(NOW(), NOW(), NULL, NULL, '{$i}', NULL) ON DUPLICATE KEY UPDATE updated_at=NOW()";
-		
 	}
 	
 	else if ( is_array($json) ) {
@@ -69,10 +67,10 @@ function theLoop($fd, $i, $use_current_time = false) {
 				$safe[$key] = mysql_real_escape_string($val);
 			}
       
-      if ($use_current_time) {
-        $raw['survey_updated_at'] = 'NOW()';
-        $raw['survey_created_at'] = 'NOW()';
-      }
+			if ($use_current_time) {
+				$raw['survey_updated_at'] = 'NOW()';
+				$raw['survey_created_at'] = 'NOW()';
+			}
 			
 			$result = "INSERT INTO fresh_smiles(created_at, updated_at, survey_created_at, survey_updated_at, ticket_id, survey_rating) VALUES(NOW(), NOW(), '{$safe['survey_created_at']}', '{$safe['survey_updated_at']}', '{$i}', '{$safe['survey_rating']}') ON DUPLICATE KEY UPDATE updated_at=NOW(), survey_created_at='{$safe['survey_created_at']}', survey_updated_at='{$safe['survey_updated_at']}', survey_rating='{$safe['survey_rating']}'";
 						
@@ -120,10 +118,10 @@ function smileyRatings() {
 		die('Invalid query: ' . mysql_error());
 	} else {
 		$result = array(
-      AWESOME => 0,
-      OK => 0,
-      NOT_GOOD => 0
-    );
+			AWESOME => 0,
+			OK => 0,
+			NOT_GOOD => 0
+    		);
 		$total = 0;
 		while( $rating = mysql_fetch_object($ratings) ) {
 			
